@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "splash_profile_images",
+  "info": {
+    "singularName": "splash-profile-image",
+    "pluralName": "splash-profile-images",
+    "displayName": "Splash Profile Image",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

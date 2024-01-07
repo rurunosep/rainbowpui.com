@@ -1,0 +1,9 @@
+{
+  "name": "rainbowpui.com",
+  "author": "Kevin Hernandez-Rives <rurunosep@gmail.com>",
+  "private": true,
+  "workspaces": [
+    "./nextjs",
+    "./strapi"
+  ]
+}
