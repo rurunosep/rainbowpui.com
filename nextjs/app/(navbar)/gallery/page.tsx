@@ -1,5 +1,7 @@
+import RouteModal from '@/components/RouteModal';
 import { ArtPiece } from '@/types';
 import Image from 'next/image';
+import Link from 'next/link';
 import Script from 'next/script';
 
 async function fetchArtPieces(): Promise<ArtPiece[]> {
@@ -21,13 +23,15 @@ export default async function GalleryPage() {
           return (
             <div className="col-md-6 col-lg-4 mb-4" key={artPiece.id}>
               <div style={{ borderRadius: '5px', overflow: 'hidden' }}>
-                <Image
-                  style={{ width: '100%', height: 'auto', display: 'block' }}
-                  src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${image.url}`}
-                  alt=""
-                  width={image.width}
-                  height={image.height}
-                />
+                <Link href={`/art/${artPiece.attributes.name}`} scroll={false}>
+                  <Image
+                    style={{ width: '100%', height: 'auto', display: 'block' }}
+                    src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${image.url}`}
+                    alt={artPiece.attributes.name}
+                    width={image.width}
+                    height={image.height}
+                  />
+                </Link>
               </div>
             </div>
           );
