@@ -26,23 +26,20 @@ export default async function GalleryArtPieceModal({
 
   return (
     <RouteModal>
-      <div
-        style={{
-          boxSizing: 'border-box',
-          padding: '1em',
-          background: 'white',
-          borderRadius: '5px',
-          overflow: 'hidden',
-        }}
-      >
-        <Image
-          src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${image.url}`}
-          alt={artPiece.attributes.name}
-          width={image.width}
-          height={image.height}
-        />
-        <h3>{artPiece.attributes.name}</h3>
-        <p>Description</p>
+      <div className="card">
+        <div className="card-body">
+          <Image
+            className="float-start me-3"
+            src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${image.url}`}
+            alt={artPiece.attributes.name}
+            width={image.width}
+            height={image.height}
+          />
+          <div style={{ display: 'inline-block', width: '20rem' }}>
+            <h3>{artPiece.attributes.name}</h3>
+            <p>Description</p>
+          </div>
+        </div>
       </div>
     </RouteModal>
   );

@@ -768,36 +768,6 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
-export interface ApiAboutMeAboutMe extends Schema.SingleType {
-  collectionName: 'about_mes';
-  info: {
-    singularName: 'about-me';
-    pluralName: 'about-mes';
-    displayName: 'About Me';
-    description: '';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    aboutMe: Attribute.Text;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::about-me.about-me',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::about-me.about-me',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiArtPieceArtPiece extends Schema.CollectionType {
   collectionName: 'art_pieces';
   info: {
@@ -859,37 +829,6 @@ export interface ApiConfigConfig extends Schema.SingleType {
   };
 }
 
-export interface ApiSplashProfileImageSplashProfileImage
-  extends Schema.SingleType {
-  collectionName: 'splash_profile_images';
-  info: {
-    singularName: 'splash-profile-image';
-    pluralName: 'splash-profile-images';
-    displayName: 'Splash Profile Image';
-    description: '';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    image: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::splash-profile-image.splash-profile-image',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::splash-profile-image.splash-profile-image',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -908,10 +847,8 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
-      'api::about-me.about-me': ApiAboutMeAboutMe;
       'api::art-piece.art-piece': ApiArtPieceArtPiece;
       'api::config.config': ApiConfigConfig;
-      'api::splash-profile-image.splash-profile-image': ApiSplashProfileImageSplashProfileImage;
     }
   }
 }
